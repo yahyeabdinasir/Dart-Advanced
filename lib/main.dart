@@ -36,10 +36,29 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _count = 0;
 
+  List Rondom_Access = [
+    "yahye" ,
+    "farah",
+    'jeer',
+  ];
+  void printng(){
+    Rondom_Access[1];
+  }
+
+  int current_index =0 ;
+
   void IncrementCount() {
     setState(() {
-      _count++;
+      current_index++;
+
     });
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    printng();
   }
 
   @override
@@ -58,12 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("You have pushed the button this many times",
+            Text('${Rondom_Access[current_index % Rondom_Access.length]}',
                 style: Theme
                 .of(context)
                 .textTheme
                 .bodyLarge,),
-            Text('$_count',
+            Text('$current_index',
               style: Theme
                   .of(context)
                   .textTheme
